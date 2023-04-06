@@ -1,10 +1,14 @@
 #!/usr/bin/python3
-"""Fabric script based on the file 1-pack_web_static.py
+"""Compress web static package
 """
+from fabric.api import *
+from datetime import datetime
+from os import path
 
-from fabric.api import put, run, env
-from os.path import exists
+
 env.hosts = ['100.26.132.169', '18.204.13.172']
+env.user = 'ubuntu'
+env.key_filename = '~/.ssh/id_rsa'
 
 
 def do_deploy(archive_path):
